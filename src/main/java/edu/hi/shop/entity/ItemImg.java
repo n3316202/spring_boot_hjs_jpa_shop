@@ -1,11 +1,8 @@
-package edu.hi.shop.dto;
+package edu.hi.shop.entity;
 
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
-
-import edu.hi.shop.entity.BaseEntity;
-import edu.hi.shop.entity.Item;
 
 @Entity
 @Table(name="item_img")

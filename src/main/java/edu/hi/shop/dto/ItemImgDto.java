@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.modelmapper.ModelMapper;
 
+import edu.hi.shop.entity.ItemImg;
+
 
 
 @Getter @Setter

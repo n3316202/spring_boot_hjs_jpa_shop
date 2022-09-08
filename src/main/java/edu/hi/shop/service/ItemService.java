@@ -16,6 +16,7 @@ import edu.hi.shop.dto.ItemFormDto;
 import edu.hi.shop.dto.ItemImgDto;
 import edu.hi.shop.dto.ItemSearchDto;
 import edu.hi.shop.entity.Item;
+import edu.hi.shop.entity.ItemImg;
 import edu.hi.shop.repository.ItemImgRepository;
 import edu.hi.shop.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;

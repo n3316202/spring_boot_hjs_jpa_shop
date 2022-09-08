@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import edu.hi.shop.dto.ItemImg;
+import edu.hi.shop.entity.ItemImg;
 
 
 

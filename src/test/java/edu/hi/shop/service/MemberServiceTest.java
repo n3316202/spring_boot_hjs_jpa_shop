@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.test.annotation.Commit;
 
+import edu.hi.shop.constant.Role;
 import edu.hi.shop.dto.MemberFormDto;
 import edu.hi.shop.entity.Member;
 
@@ -53,6 +55,27 @@ class MemberServiceTest {
         Throwable e = assertThrows(IllegalStateException.class, () -> {
             memberService.saveMember(member2);});
         assertEquals("이미 가입된 회원입니다.", e.getMessage());
+    }
+    
+    @Test
+    @DisplayName("Admin 유저 생성")
+    @Commit
+    public void saveAdminTest(){
+        MemberFormDto memberFormDto = new MemberFormDto();
+        memberFormDto.setEmail("test@email.com");
+        memberFormDto.setName("홍길동");
+        memberFormDto.setAddress("서울시 마포구 합정동");
+        memberFormDto.setPassword("1234");
+        
+        Member member=  Member.createMember(memberFormDto, passwordEncoder);
+        
+        Member savedMember = memberService.saveMember(member);
+        savedMember.setRole(Role.ADMIN);
+        
+        assertEquals(member.getEmail(), savedMember.getEmail());
+        assertEquals(member.getName(), savedMember.getName());
+        assertEquals(member.getAddress(), savedMember.getAddress());
+        assertEquals(member.getPassword(), savedMember.getPassword());
     }
 
 }

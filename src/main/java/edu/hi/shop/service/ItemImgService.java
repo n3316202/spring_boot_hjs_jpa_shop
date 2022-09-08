@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import org.thymeleaf.util.StringUtils;
 
-import edu.hi.shop.dto.ItemImg;
+import edu.hi.shop.entity.ItemImg;
 import edu.hi.shop.repository.ItemImgRepository;
 import lombok.RequiredArgsConstructor;
 
